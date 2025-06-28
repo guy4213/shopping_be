@@ -5,13 +5,31 @@
 
 This is the backend server for the Shopping List app, built with Node.js, Express, TypeScript, and Prisma.
 
-## 📆 Requirements
+## 🧰 Technologies Used
+
+- **Node.js** + **Express**: RESTful API server
+- **TypeScript**: Type-safe server logic
+- **Prisma ORM**: Interact with MySQL database
+- **MySQL (Aiven)**: Cloud database for structured item/category/cart data
+- **dotenv**: Environment variable management
+
+## ✨ Functionality
+
+- Manage shopping list items, categories, and carts
+- REST API for CRUD operations
+- Each item is linked to a category and a cart
+- Server validates and persists incoming data
+- Exposes API endpoints consumed by the frontend
+
+## 🛠 Development Setup
+
+### 📦 Requirements
 
 - Node.js (v18+ recommended)
 - MySQL database (e.g., via Aiven or local)
 - `prisma` CLI
 
-## 🔧 Setup
+### 🔧 Setup Steps
 
 1. **Clone the repo**:
 
@@ -46,7 +64,7 @@ This is the backend server for the Shopping List app, built with Node.js, Expres
    npx prisma migrate dev --name init
    ```
 
-## ▶️ Running Locally
+### ▶️ Running Locally
 
 Start the server in dev mode:
 
@@ -71,87 +89,13 @@ http://localhost:3000
 
 ```
 src/
-  ├── controllers/
-  ├── models/
-  ├── routes/
-  ├── server.ts
+  ├── controllers/     # Express route logic
+  ├── models/          # Type definitions / Prisma data logic
+  ├── routes/          # API routes
+  └── server.ts        # Main entrypoint
 prisma/
-  ├── schema.prisma
-  └── migrations/
-```
-
-````
-
----
-
-## ✅ shopping-list-frontend/README.md
-
-```markdown
-# Shopping List Frontend
-
-This is the frontend for the Shopping List app, built with React and Vite.
-
-## 📆 Requirements
-
-- Node.js (v18+ recommended)
-- Backend server running at `http://localhost:3000`
-
-## 🔧 Setup
-
-1. **Clone the repo**:
-
-   ```bash
-   git clone https://github.com/your-username/shopping-list-frontend.git
-   cd shopping-list-frontend
-````
-
-2. **Install dependencies**:
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**:
-
-   Create a `.env` file:
-
-   ```env
-   VITE_API_URL=http://localhost:3000
-   ```
-
-   This ensures API requests go to your local backend.
-
-## ▶️ Running Locally
-
-```bash
-npm run dev
-```
-
-Visit the frontend in your browser:
-
-```
-http://localhost:5173
-```
-
-## 🧐 API Usage Example
-
-Your frontend should call the backend like this:
-
-```ts
-fetch(`${import.meta.env.VITE_API_URL}/api/items`)
-```
-
-## 🛠️ Folder Structure
-
-```
-src/
-  ├── components/
-  ├── pages/
-  ├── stores/
-  ├── App.tsx
-  └── main.tsx
-.env
-vite.config.ts
+  ├── schema.prisma    # DB schema
+  └── migrations/      # Prisma migrations
 ```
 
 ```
