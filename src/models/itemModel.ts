@@ -7,6 +7,7 @@ export async function addItem(item: CartItem) {
       name: item.name,
       quantity: item.quantity,
       categoryId: item.categoryId,
+      cartId: item.cartId, // הוספת cartId
     },
   });
 }
