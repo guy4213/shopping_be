@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                     // מאפשר top-level await
+    "module": "NodeNext",                   // תואם ל-ESM בסביבת Node.js
+    "moduleResolution": "NodeNext",         // תואם לסוג הייבוא כמו .js/.ts
+    "esModuleInterop": true,                // תומך בייבוא של CommonJS (כמו express/cors)
+    "allowSyntheticDefaultImports": true,   // תומך ב-import express from 'express'
+    "strict": false,                        // אופציונלי, לפי צורך
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",                     // אופציונלי – לבנייה עתידית
+    "rootDir": "./src"                      // לוודא שהכל תחת src
+  },
+  "include": ["src/**/*"],
+  "ts-node": {
+    "esm": true                             // חשוב עבור ts-node עם --esm
+  },
+  "type": "module"
+}
